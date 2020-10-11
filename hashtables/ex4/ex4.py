@@ -1,25 +1,19 @@
 def has_negatives(a):
 
-    # compare_dict = {}
     result = []
-    # neg_dict = {}
+    neg_dict = {}
 
-    for neg in range(len(a)):
-        if a[neg] < 0:
-            negative_num = abs(a[neg])
+    for number in a:
 
-        # TODO its not comparing correctly. Put a neg number in that did not have positive comparison.
-            if negative_num not in result:
-                result.append(negative_num)
+        neg_dict[number] = None
 
-        # if neg not in compare_dict:
-        #     compare_dict[negative_num] = neg
+    for number in neg_dict:
+        if number > 0 and -number in neg_dict:
+            result.append(number)
 
-    # print(compare_dict)
-    print(result)
     return result
 
 
 if __name__ == "__main__":
     print(has_negatives([-1, -2, 1, 2, 3, 4, -4]))
-    print(has_negatives([1, 2, 3, -4]))
+    # print(has_negatives([1, 2, 3, -4]))
