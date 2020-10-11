@@ -1,19 +1,32 @@
 
 
-weights_4 = [12, 6, 7, 14, 19, 3, 0, 25, 40]
+weights_2 = [4, 4]
 
 
 def get_indices_of_item_weights(weights, length, limit):
     weight_dict = {}
 
-    for weight in range(length):
-        print()
-    #     if weight not in weight_dict:
-    #         if length <= 1:
-    #             return None
-    #         weight_dict = weight
+    for (weight, inx) in enumerate(weights):
+        weight_dict[weight] = inx
+        # print(weight_dict[weight])
+        print(weight_dict)
 
-    # return weight_dict
+        # if length <= 1:
+        #     return None
+
+        for curr_inx, weight in enumerate(weights):
+            weight_dict[weight] = curr_inx
+            difference = limit - weight
+            print("difference", difference, limit, weight)
+            if difference in weight_dict:
+
+                # returning indexes in correct order
+                if curr_inx > weight_dict[difference]:
+                    return(curr_inx, weight_dict[difference])
+                else:
+                    return (weight_dict[difference], curr_inx)
 
 
-print(get_indices_of_item_weights(weights_4, 9, 10))
+answer_2 = get_indices_of_item_weights(weights_2, 2, 8)
+# answer_4 = get_indices_of_item_weights(weights_4, 9, 7)
+print(answer_2)
