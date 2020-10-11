@@ -1,10 +1,6 @@
 def intersection(arrays):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
 
-    return result
+    pass
 
 
 if __name__ == "__main__":
