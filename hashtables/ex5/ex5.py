@@ -1,14 +1,14 @@
 # Your code here
 
 
-
 def finder(files, queries):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    res = []
+    [res.extend(idx.split("/")) for idx in files]
+    print(res)
 
-    return result
+    for i in range(len(queries)):
+        if queries[i] in res:
+            print(queries[i])
 
 
 if __name__ == "__main__":
