@@ -12,6 +12,7 @@ def get_indices_of_item_weights(weights, length, limit):
         # print("difference", difference, limit, weight)
         # (4, 8 4) back
 
+        # Determining order of indexes based on weight
         if difference in weight_dict:
             if index > weight_dict[difference]:
                 print("curr_indexinx", index, weight_dict[difference])
